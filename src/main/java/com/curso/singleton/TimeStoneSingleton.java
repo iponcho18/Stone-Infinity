@@ -1,0 +1,25 @@
+package com.curso.singleton;
+
+import com.curso.models.TimeStone;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.extern.java.Log;
+
+@Log
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class TimeStoneSingleton {
+    private static volatile TimeStone timeStoneInstance;
+
+    public static  TimeStone getInstance(){
+        if (timeStoneInstance == null){
+            synchronized (TimeStoneSingleton.class){
+                if (timeStoneInstance == null){
+                    log.info("se crea instancia de tiempo");
+                    timeStoneInstance = new TimeStone();
+                }
+            }
+        }
+        return  timeStoneInstance;
+    }
+
+}

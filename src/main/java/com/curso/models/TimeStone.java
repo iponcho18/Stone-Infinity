@@ -3,7 +3,7 @@ package com.curso.models;
 import lombok.ToString;
 
 @ToString
-public abstract class TimeStone extends Stone{
+public class TimeStone extends Stone{
     private static final String COLOR = "Green";
     private static final String NAME = "Time Stone";
     private static final String LOCATION = "Eye Agamoto";
